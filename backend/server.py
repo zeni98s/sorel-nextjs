@@ -191,6 +191,16 @@ async def analyze_wallet(request: WalletAnalysisRequest):
     try:
         wallet_address = request.wallet_address
         
+        # Validate wallet address format
+        if not wallet_address or len(wallet_address) < 32 or len(wallet_address) > 44:
+            raise HTTPException(status_code=400, detail="Invalid Solana wallet address format")
+        
+        # Try to parse the address to validate it
+        try:
+            Pubkey.from_string(wallet_address)
+        except Exception:
+            raise HTTPException(status_code=400, detail="Invalid Solana wallet address")
+        
         # Check if wallet exists in DB
         existing_wallet = await db.wallets.find_one({"wallet_address": wallet_address}, {"_id": 0})
         
