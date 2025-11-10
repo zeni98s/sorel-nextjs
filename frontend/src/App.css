@@ -1,34 +1,260 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  color: #1a1a1a;
+  min-height: 100vh;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-link {
-    color: #61dafb;
+/* Header Styling */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.logo-container {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #9945FF 0%, #14F195 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Wallet Button Styling */
+.wallet-adapter-button {
+  background: linear-gradient(90deg, #9945FF 0%, #14F195 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  box-shadow: 0 4px 12px rgba(153, 69, 255, 0.3) !important;
+}
+
+.wallet-adapter-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(153, 69, 255, 0.4) !important;
+}
+
+.wallet-adapter-button-trigger {
+  background: linear-gradient(90deg, #9945FF 0%, #14F195 100%) !important;
+}
+
+/* Card Enhancements */
+[data-testid*="card"],
+.border {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(153, 69, 255, 0.1);
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+[data-testid*="card"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Stats Cards */
+[data-testid^="stat-card"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-left: 4px solid;
+}
+
+[data-testid="stat-card-wallets"] {
+  border-left-color: #3b82f6;
+}
+
+[data-testid="stat-card-reputation"] {
+  border-left-color: #10b981;
+}
+
+[data-testid="stat-card-transactions"] {
+  border-left-color: #f59e0b;
+}
+
+[data-testid="stat-card-active"] {
+  border-left-color: #8b5cf6;
+}
+
+/* Reputation Score Card */
+[data-testid="reputation-score-card"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Leaderboard Items */
+[data-testid^="leaderboard-item"] {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+[data-testid^="leaderboard-item"]:hover {
+  transform: translateX(4px);
+  border-color: #9945FF;
+}
+
+[data-testid="leaderboard-item-1"] {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+}
+
+[data-testid="leaderboard-item-2"] {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  border-color: #9ca3af;
+}
+
+[data-testid="leaderboard-item-3"] {
+  background: linear-gradient(135deg, #fef3e6 0%, #fed7aa 100%);
+  border-color: #f97316;
+}
+
+/* Tabs */
+[data-testid="tabs-list"] {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+button[data-state="active"] {
+  background: linear-gradient(90deg, #9945FF 0%, #14F195 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="search"] {
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+  outline: none;
+  border-color: #9945FF;
+  box-shadow: 0 0 0 3px rgba(153, 69, 255, 0.1);
+}
+
+/* Buttons */
+button {
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+button:not(.wallet-adapter-button):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Charts */
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9945FF 0%, #14F195 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8834ee 0%, #12d684 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  [data-testid="tabs-list"] {
+    max-width: 100%;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main > * {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
 }
