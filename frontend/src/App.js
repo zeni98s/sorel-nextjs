@@ -4,6 +4,7 @@ import { WalletContextProvider, WalletButton } from './components/WalletConnect'
 import { Dashboard } from './components/Dashboard';
 import { WalletAnalysis } from './components/WalletAnalysis';
 import { Leaderboard } from './components/Leaderboard';
+import { DemoBanner } from './components/DemoBanner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import { Toaster } from './components/ui/sonner';
 import { BarChart3, Search, Trophy } from 'lucide-react';
@@ -15,6 +16,9 @@ function App() {
     <WalletContextProvider>
       <div className="App" data-testid="app-container">
         <Toaster position="top-right" />
+        
+        {/* Demo Mode Banner */}
+        <DemoBanner />
         
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
