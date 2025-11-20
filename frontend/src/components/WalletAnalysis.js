@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Search, Loader2, TrendingUp, Calendar, Activity, Code, Network } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { toast } from 'sonner';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { apiService } from '../services/apiService';
 
 export const WalletAnalysis = () => {
     const { publicKey } = useWallet();
@@ -24,11 +21,16 @@ export const WalletAnalysis = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post(`${API}/wallets/analyze`, {
-                wallet_address: address
-            });
-            setWalletData(response.data);
-            toast.success('Wallet analyzed successfully!');
+            const data = await apiService.analyzeWallet(address);
+            setWalletData(data);
+            
+            if (apiService.isUsingMockData()) {
+                toast.success('Wallet analyzed! (Demo data)', {
+                    description: 'Using simulated data in demo mode'
+                });
+            } else {
+                toast.success('Wallet analyzed successfully!');
+            }
         } catch (error) {
             console.error('Error analyzing wallet:', error);
             toast.error('Failed to analyze wallet');
