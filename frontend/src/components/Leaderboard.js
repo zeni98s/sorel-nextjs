@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Trophy, Medal, Award } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { apiService } from '../services/apiService';
 
 export const Leaderboard = () => {
     const [wallets, setWallets] = useState([]);
@@ -16,8 +13,8 @@ export const Leaderboard = () => {
 
     const fetchLeaderboard = async () => {
         try {
-            const response = await axios.get(`${API}/wallets/leaderboard/top?limit=50`);
-            setWallets(response.data);
+            const data = await apiService.getLeaderboard(50);
+            setWallets(data);
         } catch (error) {
             console.error('Error fetching leaderboard:', error);
         } finally {
