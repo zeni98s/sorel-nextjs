@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { TrendingUp, Users, Activity, Award } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { apiService } from '../services/apiService';
 
 export const Dashboard = () => {
     const [stats, setStats] = useState(null);
@@ -18,12 +15,12 @@ export const Dashboard = () => {
 
     const fetchDashboardData = async () => {
         try {
-            const [statsRes, trendsRes] = await Promise.all([
-                axios.get(`${API}/analytics/stats`),
-                axios.get(`${API}/analytics/trends?days=7`)
+            const [statsData, trendsData] = await Promise.all([
+                apiService.getAnalyticsStats(),
+                apiService.getReputationTrends(7)
             ]);
-            setStats(statsRes.data);
-            setTrends(trendsRes.data);
+            setStats(statsData);
+            setTrends(trendsData);
         } catch (error) {
             console.error('Error fetching dashboard data:', error);
         } finally {
