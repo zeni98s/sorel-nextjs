@@ -5,8 +5,8 @@
 import axios from 'axios';
 import { mockApiService, shouldUseMockData } from './mockData';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
+const API = API_URL ? `${API_URL}/api` : '/api';
 
 /**
  * Unified API Service
