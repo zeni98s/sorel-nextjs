@@ -4,6 +4,7 @@ import { Dashboard } from '../components/Dashboard';
 import { WalletAnalysis } from '../components/WalletAnalysis';
 import { Leaderboard } from '../components/Leaderboard';
 import { DemoBanner } from '../components/DemoBanner';
+import { AIChat } from '../components/AIChat';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { BarChart3, Search, Trophy } from 'lucide-react';
 
