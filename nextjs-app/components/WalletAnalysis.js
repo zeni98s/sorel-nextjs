@@ -206,6 +206,14 @@ export const WalletAnalysis = () => {
                             </CardContent>
                         </Card>
                     </div>
+
+                    {/* AI Dashboard */}
+                    <div className="mt-8">
+                        <AIDashboard 
+                            walletAddress={walletData.wallet_address} 
+                            walletData={walletData} 
+                        />
+                    </div>
                 </div>
             )}
         </div>
