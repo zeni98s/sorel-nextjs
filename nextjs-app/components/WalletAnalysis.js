@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { toast } from 'sonner';
 import { apiService } from '../services/apiService';
+import { AIDashboard } from './AIDashboard';
 
 export const WalletAnalysis = () => {
     const { publicKey } = useWallet();
