@@ -84,10 +84,13 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-sm text-muted-foreground">
             <p>SoReL • Data & Trust Layer for Solana Ecosystem</p>
-            <p className="mt-2">Building reputation and trust on-chain</p>
+            <p className="mt-2">Building reputation and trust on-chain • Powered by AI</p>
           </div>
         </div>
       </footer>
+
+      {/* AI Chat Widget */}
+      <AIChat walletAddress={activeTab === 'analysis' ? '' : null} />
     </div>
   );
 }
