@@ -1,0 +1,29 @@
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="logo-container">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="20" r="18" fill="url(#gradient)" />
+                  <path d="M20 10L25 20L20 30L15 20L20 10Z" fill="white" opacity="0.9" />
+                  <defs>
+                    <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                      <stop offset="0%" stopColor="#9945FF" />
+                      <stop offset="100%" stopColor="#14F195" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold gradient-text" data-testid="app-title">
+                  SoReL
+                </h1>
+                <p className="text-xs text-muted-foreground">Solana Reputation Layer</p>
+              </div>
+            </div>
+            <div data-testid="wallet-button-container">
+              <WalletMultiButton />
+            </div>
+          </div>
+        </div>
+      </header>
