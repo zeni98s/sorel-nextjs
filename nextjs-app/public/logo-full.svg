@@ -1,0 +1,36 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon -->
+  <circle cx="100" cy="100" r="85" fill="url(#gradient2)" />
+  <path d="M100 40 L135 58 L135 105 C135 123 118 136 100 140 C82 136 65 123 65 105 L65 58 Z" 
+        fill="white" opacity="0.95"/>
+  <path d="M85 100 L95 110 L115 85" 
+        stroke="url(#gradient2)" 
+        stroke-width="7" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Text: SoReL -->
+  <text x="220" y="120" 
+        font-family="'Space Grotesk', 'Arial Black', sans-serif" 
+        font-size="72" 
+        font-weight="700" 
+        fill="url(#gradient2)">
+    SoReL
+  </text>
+  
+  <!-- Tagline -->
+  <text x="220" y="150" 
+        font-family="'Inter', Arial, sans-serif" 
+        font-size="18" 
+        fill="#666">
+    Solana Reputation Layer
+  </text>
+  
+  <defs>
+    <linearGradient id="gradient2" x1="0" y1="0" x2="600" y2="200">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="100%" stop-color="#14F195" />
+    </linearGradient>
+  </defs>
+</svg>

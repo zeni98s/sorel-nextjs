@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background with gradient -->
+  <circle cx="100" cy="100" r="95" fill="url(#gradient1)" />
+  
+  <!-- Shield/Trust symbol -->
+  <path d="M100 40 L140 60 L140 110 C140 130 120 145 100 150 C80 145 60 130 60 110 L60 60 Z" 
+        fill="white" opacity="0.95"/>
+  
+  <!-- Checkmark in shield -->
+  <path d="M85 100 L95 110 L115 85" 
+        stroke="url(#gradient1)" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Solana-style accent lines -->
+  <path d="M70 75 L130 75" stroke="url(#gradient1)" stroke-width="3" opacity="0.3"/>
+  <path d="M70 125 L130 125" stroke="url(#gradient1)" stroke-width="3" opacity="0.3"/>
+  
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="200" y2="200">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="50%" stop-color="#7928CA" />
+      <stop offset="100%" stop-color="#14F195" />
+    </linearGradient>
+  </defs>
+</svg>

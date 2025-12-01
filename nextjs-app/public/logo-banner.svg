@@ -1,0 +1,45 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="1200" height="400" fill="url(#gradient4)"/>
+  
+  <!-- Icon -->
+  <circle cx="200" cy="200" r="120" fill="white" opacity="0.15"/>
+  <path d="M200 100 L265 130 L265 230 C265 265 230 290 200 300 C170 290 135 265 135 230 L135 130 Z" 
+        fill="white" opacity="0.98"/>
+  <path d="M175 210 L195 230 L230 185" 
+        stroke="url(#gradient4)" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Main text -->
+  <text x="380" y="230" 
+        font-family="'Space Grotesk', 'Arial Black', sans-serif" 
+        font-size="96" 
+        font-weight="700" 
+        fill="white">
+    SoReL
+  </text>
+  
+  <!-- Tagline -->
+  <text x="380" y="280" 
+        font-family="'Inter', Arial, sans-serif" 
+        font-size="28" 
+        fill="white"
+        opacity="0.9">
+    Data & Trust Layer for Solana Ecosystem
+  </text>
+  
+  <!-- Accent elements -->
+  <circle cx="1050" cy="100" r="40" fill="white" opacity="0.1"/>
+  <circle cx="1100" cy="300" r="60" fill="white" opacity="0.1"/>
+  
+  <defs>
+    <linearGradient id="gradient4" x1="0" y1="0" x2="1200" y2="400">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="50%" stop-color="#7928CA" />
+      <stop offset="100%" stop-color="#14F195" />
+    </linearGradient>
+  </defs>
+</svg>

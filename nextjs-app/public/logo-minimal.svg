@@ -1,0 +1,33 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple clean version -->
+  <circle cx="150" cy="150" r="145" stroke="url(#gradient6)" stroke-width="10" fill="white"/>
+  
+  <!-- Shield -->
+  <path d="M150 70 L200 92 L200 168 C200 195 175 213 150 220 C125 213 100 195 100 168 L100 92 Z" 
+        fill="url(#gradient6)" opacity="0.95"/>
+  
+  <!-- Checkmark -->
+  <path d="M130 155 L145 170 L175 135" 
+        stroke="white" 
+        stroke-width="10" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Letter S -->
+  <text x="150" y="270" 
+        font-family="'Space Grotesk', 'Arial Black', sans-serif" 
+        font-size="48" 
+        font-weight="700" 
+        fill="url(#gradient6)"
+        text-anchor="middle">
+    S
+  </text>
+  
+  <defs>
+    <linearGradient id="gradient6" x1="0" y1="0" x2="300" y2="300">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="100%" stop-color="#14F195" />
+    </linearGradient>
+  </defs>
+</svg>
